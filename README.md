@@ -1,26 +1,20 @@
 # Bidnews Backend
 
-Express.js backend for Bidnews F&B newsletter platform.
+Express.js backend for Bidnews newsletter platform with SQLite database.
 
-## Quick Start
+## Setup
 
 ```bash
 npm install
+cp .env.example .env
 npm start
 ```
 
-## Environment Variables
-
-Copy `.env.example` to `.env` and configure:
-- `DATABASE_URL` - MongoDB Atlas connection string
-- `REDIS_URL` - Upstash Redis URL
-- `NEWSAPI_KEY` - Your NewsAPI key
-- `JWT_SECRET` - Random secret for JWT tokens
-
 ## API Endpoints
 
+- `POST /api/v1/auth/register` - Register user
+- `POST /api/v1/auth/login` - Login
+- `GET /api/v1/news` - Get news
+- `GET /api/v1/sales` - Get sales data
+- `POST /api/v1/sales` - Update sales (protected)
 - `GET /health` - Health check
-- `GET/POST /api/v1/news` - News management
-- `GET/POST /api/v1/restaurants` - Restaurant management
-- `POST /api/v1/auth/register` - User registration
-- `POST /api/v1/auth/login` - User login
